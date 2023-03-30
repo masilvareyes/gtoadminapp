@@ -33,18 +33,23 @@ require 'cabecero.php';
           <h3 class="card-title">Title</h3>
 
           <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
           </div>
         </div>
         <div class="card-body">
-          Check the Header part you can find Legacy vesion of style.
-          <br>
-          Start creating your amazing application!
+          <!--  Contenedor de formuluario --> 
+          <div class="panel-body" id="formregdata">
+            <form name="formulario" id="formulario" method="post">
+              <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <label for="descripcion">Nombre del departamento</label>
+                <input type="hidden" name="idDepartamento" id="idDepartamento">
+                <input type="text" name="descripcion" id="descripcion" maxlength="256" placeholder="Nombre departamento" required>
+              </div>
+              <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <button class="btn btn-primary" id="btnGuardar" type="submit">Guardar</button>
+                <button class="btn btn-danger" id="btnCancelar" type="clear">Cancelar</button>  
+              </div>
+            </form>
+          </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
