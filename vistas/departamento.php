@@ -8,22 +8,6 @@ require 'cabecero.php';
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Legacy User Menu</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Legacy User Menu</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
     <!-- Main content -->
     <section class="content">
 
@@ -36,6 +20,27 @@ require 'cabecero.php';
           </div>
         </div>
         <div class="card-body">
+          <!--  Contenedor de listados   -->  
+          <div class="panel-body" id="listadoregdata">
+              <table id="tblistadoregdata" class="table table-striped table-bordered table-condensed table-over"> 
+                  <thead> 
+                    <th> Descripción</th>
+                    <th>  Fecha de creación</th>
+                    <th>  Fecha de actualización</th>
+                    <th>  Status</th>
+                    <th>  Empleado modifico</th>  
+                  </thead>
+                  <tbody> 
+                  </tbody>
+                  <thead> 
+                    <th> Descripción</th>
+                    <th>  Fecha de creación</th>
+                    <th>  Fecha de actualización</th>
+                    <th>  Status</th>
+                    <th>  Empleado modifi   co</th>  
+                  </thead>
+              </table> 
+          </div>
           <!--  Contenedor de formuluario --> 
           <div class="panel-body" id="formregdata">
             <form name="formulario" id="formulario" method="post">
@@ -52,10 +57,7 @@ require 'cabecero.php';
           </div>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
+
       </div>
       <!-- /.card -->
 
