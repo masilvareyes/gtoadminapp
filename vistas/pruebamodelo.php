@@ -21,17 +21,17 @@ echo "id del departamento: $id01 <br>";
 /*
 $fechaActualizacion=date("Y-m-d H:i:s");
 
-$departamento->editar('7', 'Finanzas', $fechaActualizacion, '3');
+$departamento->editar('2', 'VentasRegionales', $fechaActualizacion, '3');
 */
+
+//$departamento->desactivar('3');
+//$departamento->desactivar('4');
+
+//$departamento->activar('3');
 /*
-$departamento->desactivar('8');
-$departamento->desactivar('11');
-
-$departamento->activar('11');
-*/
-
-//$var= $departamento->mostrar('9');
-
+$var= $departamento->mostrar('1');
+var_dump($var);*/
+/*
 $var= $departamento->listar();
 echo "Registros listar, no filtra registros inactivos<br>";  
 var_dump($var);
@@ -42,8 +42,9 @@ while ($reg=$var->fetch_object()){
   echo "<br>";  
   echo "<br>";     
 }
+*/
 
-$departamento->desactivar('10');
+//$departamento->desactivar('10');
 
 echo "Registros select , unicamente activos<br>";  
 $var= $departamento->select();
