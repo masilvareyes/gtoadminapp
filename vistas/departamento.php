@@ -14,7 +14,7 @@ require 'cabecero.php';
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Title</h3>
+          <h3 class="card-title">Departamentos</h3>
 
           <div class="card-tools">
           </div>
@@ -24,20 +24,22 @@ require 'cabecero.php';
           <div class="panel-body" id="listadoregdata">
               <table id="tblistadoregdata" class="table table-striped table-bordered table-condensed table-over"> 
                   <thead> 
-                    <th> Descripción</th>
-                    <th>  Fecha de creación</th>
-                    <th>  Fecha de actualización</th>
-                    <th>  Status</th>
-                    <th>  Empleado modifico</th>  
+                    <th>Opciones</th>
+                    <th>Descripción</th>
+                    <th>Fecha de creación</th>
+                    <th>Fecha de actualización</th>
+                    <th>Status</th>
+                    <th>Empleado modifico</th>  
                   </thead>
                   <tbody> 
                   </tbody>
                   <thead> 
-                    <th> Descripción</th>
-                    <th>  Fecha de creación</th>
-                    <th>  Fecha de actualización</th>
-                    <th>  Status</th>
-                    <th>  Empleado modifi   co</th>  
+                    <th>pciones</th>
+                    <th>escripción</th>
+                    <th>Fecha de creación</th>
+                    <th>Fecha de actualización</th>
+                    <th>Status</th>
+                    <th>Empleado modifico</th>  
                   </thead>
               </table> 
           </div>
