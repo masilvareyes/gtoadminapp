@@ -73,3 +73,5 @@ require 'cabecero.php';
 <?php 
 require 'piepagina.php';
 ?>
+
+<script type="text/javascript" src="scripts/departamento.js"></script>
