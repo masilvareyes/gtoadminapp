@@ -14,7 +14,9 @@ switch ($_GET["op"]){
           ' <button class="btn btn-primary" onclick="activar('.$reg->idDepartamento.')"><i class="fa fa-check"></i></button>',
           "1"=>$reg->descripcion,
           "2"=>$reg->fechaCreacion,
-          "3"=>($reg->activo)?'<span class="label bg-green">Activado</span>':'<span class="label bg-red">Desactivado</span>'
+          "3"=>$reg->fechaActualizacion,
+          "4"=>($reg->activo)?'<span class="label bg-green">Activado</span>':'<span class="label bg-red">Desactivado</span>',
+          "5"=>$reg->idEmpActualiza
         );
       }
       $results=array(
@@ -22,6 +24,7 @@ switch ($_GET["op"]){
         "iTotalRecords"=>count($data),
         "iTotalDisplayRecords"=>count($data),
         "aaData"=>$data);
+      echo json_encode($results);
   
   /*
   
@@ -32,6 +35,6 @@ switch ($_GET["op"]){
           echo "$reg->fechaActualizacion";
           echo "$reg->idEmpActualiza";
           */
-      } 
+} 
 
 ?>
