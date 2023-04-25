@@ -1,7 +1,15 @@
 <?php   
 require_once "../modelos/Departamento.php";
-
 $departamento=new Departamento();
+
+//Obtenemos nuestras variables del arreglo post
+$idDepartamento=isset($_POST['idDepartamento'])?limpiarCadenas($_POST['idDepartamento']):"";
+$descripcion=isset($_POST['descripcion'])?limpiarCadenas($_POST['descripcion']):"";
+
+//Agregamos lógica para fechas de registro y variables auxiliares 
+$fechaActualizacion=date("Y-m-d H:i:s");
+$idEmpActualiza=1; // Cambiar por el usuario de la sesion.
+
 
 switch ($_GET["op"]){
     case 'listar':
@@ -24,9 +32,29 @@ switch ($_GET["op"]){
         "sEcho"=>1, //informacion para el datatables
         "iTotalRecords"=>count($data),
         "iTotalDisplayRecords"=>count($data),
-        "aaData"=>$data);
+        "aaData"=>$data
+      );
+
       echo json_encode($results);
-  
+
+    break;
+    //Agregamos caso de guardar y editar
+    case 'guardaryeditar':
+      //Agregamos validación para saber si tenemos que guardar una edición o crear un nuevo registro
+      if(empty($idDepartamento)){
+        //Ejecutamos la instrucción de insertar
+        $rspta=$departamento->insertar($descripcion);
+        //Configuramos el mensaje de respuesta
+        echo $rspta!=0?"Departamento registrado":"Error departamento no resgistrado";
+      }else{
+        //Ejecutamos la instrucción de editar
+        $rspta=$departamento->editar($idDepartamento, $descripcion, $fechaActualizacion, $idEmpActualiza);
+        //Configuramos el mensaje de respuesta
+        echo $rspta!=0?"Departamento actualizado":"Error departamento no actualizado";
+      }
+      
+    break;
+
   /*
   
           echo "$reg->idDepartamento";
