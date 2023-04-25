@@ -3,6 +3,11 @@ var table;
 function init(){
 	listar();
 	mostrarform(false);//ocultamos formulario al cargar la pagina.
+	//Agregamos evento a el formulario para guardar y editar
+	$("#formulario").on("submit",function(e){
+		guardaryeditar(e);
+		}
+	);
 }
 
 function listar(){
@@ -63,6 +68,37 @@ function mostrarform(flag) {
 function cancelarform() {
 	limpiar();
 	mostrarform(false);
+}
+
+//Creamos función de guardar y editar
+function guardaryeditar(e) {
+	e.preventDefault();
+	//desactivamos eventos
+
+	/*
+	console.log($("#formulario"));
+	console.log("separacion");
+	console.log($("#formulario")[0]);
+	*/
+	//desactivamos botón guardar para evitar múltiples llamados 
+	$("#btnagregar").prop("disable",true);
+	//obtenemos datos del formulario y creamos pares 
+	var formData = new FormData($("#formulario")[0]);
+	//construimos nuestro Ajax tipo post y configuramos el llamado
+	$.ajax({
+		url:"../ajax/departamento.php?op=guardaryeditar",
+		type: "POST",
+		data: formData,
+		contentType: false, //no manda cabecero
+		processData: false, //no convierte objetos en string
+
+		success: function (mensaje) {
+			alert(mensaje);
+			mostrarform(false);
+			table.ajax.reload();
+		}
+	});
+	limpiar();
 }
 
 init();
