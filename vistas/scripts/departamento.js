@@ -93,7 +93,12 @@ function guardaryeditar(e) {
 		processData: false, //no convierte objetos en string
 
 		success: function (mensaje) {
-			alert(mensaje);
+			valida = mensaje.indexOf('rror');
+			if(valida!=-1){
+				toastr["error"](mensaje);
+			}else{
+				toastr["success"](mensaje);
+			}
 			mostrarform(false);
 			table.ajax.reload();
 		}
