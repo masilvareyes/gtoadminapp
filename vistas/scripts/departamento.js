@@ -34,7 +34,7 @@ function listar(){
 			}
 		}, 
 		"destroy": true, //cada que se ejecute se reinicializa
-		"iDisplayLength":3, //indica cuantos registros vamos a mostrar en el table.
+		"iDisplayLength":5, //indica cuantos registros vamos a mostrar en el table.
 		"order": [[1,"desc"]]
 	}).DataTable();
 }
@@ -107,6 +107,26 @@ function guardaryeditar(e) {
 	});
 	
 	limpiar();
+}
+
+//se crea la función mostrar con parámetro idDepartamento
+//esta función es la que recibe lo que manda el evento en el icono de editar
+function mostrar(idDepartamento){
+	// utilizamos el short hand de jQuery para Ajax post 
+	// podemos crear nuestro propio arreglo de variables poniendo los pares entre {}
+	// Función anónima para capturar el regreso
+	$.post("../ajax/departamento.php?op=mostrar",{idDepartamento:idDepartamento},function(data){
+		//console.log(data);
+		//convertimos los datos que vienen de regreso en formato Json a tipo objeto 
+		data=JSON.parse(data);
+		//console.log(data);
+		//Mostramos el formulario y ocultamos el listado 
+		mostrarform(true); 
+		//rellenamos a través de instrucciones jQuery los campos del formulario con los datos que nos regresó el Ajax
+		$("#idDepartamento").val(data.idDepartamento);
+		$("#descripcion").val(data.descripcion);
+
+	});
 }
 
 init();

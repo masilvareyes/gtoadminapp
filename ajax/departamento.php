@@ -54,6 +54,13 @@ switch ($_GET["op"]){
       }
       
     break;
+    //Establecemos el caso para la opción mostrar
+    case 'mostrar':
+      //Llamamos al método mostrar de nuestro objeto
+      $rspta=$departamento->mostrar($idDepartamento);
+      //codificamos a json el resultado para que viaje correctamente por request.
+      echo json_encode($rspta);
+    break;
 
   /*
   
