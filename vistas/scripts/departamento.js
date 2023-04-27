@@ -83,6 +83,8 @@ function guardaryeditar(e) {
 	//desactivamos botón guardar para evitar múltiples llamados 
 	$("#btnagregar").prop("disable",true);
 	//obtenemos datos del formulario y creamos pares 
+	
+	
 	var formData = new FormData($("#formulario")[0]);
 	//construimos nuestro Ajax tipo post y configuramos el llamado
 	$.ajax({
@@ -103,6 +105,7 @@ function guardaryeditar(e) {
 			table.ajax.reload();
 		}
 	});
+	
 	limpiar();
 }
 
