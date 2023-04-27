@@ -62,6 +62,19 @@ switch ($_GET["op"]){
       echo json_encode($rspta);
     break;
 
+    //Creamos el caso para desactivar
+    case 'desactivar':
+      //Mandamos a ejecutar el método para desactivar de nuestro objeto
+      $rspta=$departamento->desactivar($idDepartamento);
+      //Configuramos mensaje de respuesta
+      echo $rspta?"Departamento desactivado":"Error departamento no desactivado";
+    break;
+    
+    //Reutilizamos el código para implementar la funcionalidad de activar.
+    case 'activar':
+      $rspta=$departamento->activar($idDepartamento);
+      echo $rspta?"Departamento activado":"Error departamento no activado";
+    break;
   /*
   
           echo "$reg->idDepartamento";

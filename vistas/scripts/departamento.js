@@ -129,4 +129,68 @@ function mostrar(idDepartamento){
 	});
 }
 
+//Creación de la función desactivar con el idDepartamento como parámetro
+function desactivar(idDepartamento) {
+	//Implementación de la ventana de verificación con toastr
+	//Seleccionamos ventana de warning y mandamos a confirmar acción
+	//Utilizando botones HTML para la respuesta
+	var ventanaEleccion =toastr.warning('¿Deseas desactivar el depto seleccionado?<br>'+
+		'<button type="button" id=rptaSi class="btn btn-success">Si</button>'+
+		'<button type="button" id=rptaNo class="btn btn-danger">No</button>',"Alerta");
+
+	//Añadimos funcionalidad para cada botón, capturando el evento clic y mandando una función anónima 
+	//En caso de que decida continuar mandamos a llamar a nuestro Ajax de desactivamos
+	$("#rptaSi").click(function() {
+		console.log("El usuario ha elegido desactivar el depto");
+		$.post("../ajax/departamento.php?op=desactivar",{idDepartamento:idDepartamento},function(mensaje){
+			//alert(mensaje);
+			//Preparamos el js para recibir el mensaje de resultado de la desactivación
+			//Formateamos el mensaje de respuesta
+			valida = mensaje.indexOf('rror');
+			
+			if(valida!=-1){
+				toastr["error"](mensaje);
+			}else{
+				toastr["success"](mensaje);
+			}
+			table.ajax.reload();
+		});
+	});
+
+	//En caso de que no decida continuar mandamos no realizamos ninguna acción 
+	$("#rptaNo").click(function() {
+		console.log("El usuario ha elegido cancelar la accion")
+		toastr.clear(ventanaEleccion);
+	});
+
+}
+
+//Reutilizamos el código para implementar la funcionalidad de activar.
+function activar(idDepartamento) {
+	var ventanaEleccion =toastr.warning('¿Deseas activar el depto seleccionado?<br>'+
+		'<button type="button" id=rptaSi class="btn btn-success">Si</button>'+
+		'<button type="button" id=rptaNo class="btn btn-danger">No</button>',"Alerta");
+
+	$("#rptaSi").click(function() {
+		console.log("El usuario ha elegido activar el depto");
+		$.post("../ajax/departamento.php?op=activar",{idDepartamento:idDepartamento},function(mensaje){
+			//alert(mensaje);
+			valida = mensaje.indexOf('rror');
+			
+			if(valida!=-1){
+				toastr["error"](mensaje);
+			}else{
+				toastr["success"](mensaje);
+			}
+			table.ajax.reload();
+		});
+	});
+
+	$("#rptaNo").click(function() {
+		console.log("El usuario ha elegido cancelar la accion")
+		//Limpiamos mensajes que hayan quedado instanciados
+		toastr.clear(ventanaEleccion);
+	});
+
+}
 init();
