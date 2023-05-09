@@ -101,7 +101,7 @@ if (strlen(session_id())<1)
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="categoria.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Catálogo Categorias</p>
                 </a>

@@ -36,8 +36,8 @@ require 'cabecero.php';
                   <tbody> 
                   </tbody>
                   <thead> 
-                    <th>pciones</th>
-                    <th>escripción</th>
+                    <th>Opciones</th>
+                    <th>Descripción</th>
                     <th>Fecha de creación</th>
                     <th>Fecha de actualización</th>
                     <th>Status</th>
