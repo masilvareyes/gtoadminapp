@@ -39,4 +39,35 @@ function limpiarCadenas($str){
 }
 
 
+if (!function_exists('encryption')){ //Valida si la función ya esta en memoria.
+  function encryption($string){
+    //write_log("ENTRANDO A conexion encryption - SK =  ".SECRET_KEY);//ejecutarConsulta($sql);
+    $output=FALSE;
+    $key = hash('sha256',SECRET_KEY);
+    $iv=openssl_random_pseudo_bytes(openssl_cipher_iv_length(METHOD));
+    $output=openssl_encrypt($string, METHOD,$key,0,$iv);
+    $output=base64_encode($output.'::'.$iv);
+    //write_log("ENTRANDO A conexion encryption - SK =  ".$output);//ejecutarConsulta($sql);
+    return $output;
+  }
+
+  function decryption($string){
+    //write_log("ENTRANDO A conexion decryption - SK =  ".SECRET_KEY);//ejecutarConsulta($sql);
+    $key = hash('sha256',SECRET_KEY);
+    list($string,$iv) = array_pad(explode('::', base64_decode($string), 2),2,null);
+    $output=openssl_decrypt($string,METHOD,$key,0,$iv);
+    //write_log("ENTRANDO A conexion decryption - SK =  ".$output);//ejecutarConsulta($sql);
+    return $output;
+  }
+
+  function write_log($log_msg){
+    $log_filename = "gastosLog";
+    if (!file_exists($log_filename)){
+        mkdir($log_filename, 0777, true);
+    }
+    $log_file_data = $log_filename.'/debug.log';
+    file_put_contents($log_file_data, "===================== ".date("Y-m-d H:i:s")." ==============" . "\n", FILE_APPEND);
+    file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
+  }
+}
 ?>
