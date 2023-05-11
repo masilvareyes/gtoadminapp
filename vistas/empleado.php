@@ -61,7 +61,7 @@
                 <label for="segundoApellido">Segundo Apellido</label>
                 <input type="text" class="form-control" name="segundoApellido" id="segundoApellido" maxlength="256" placeholder="Segundo Apellido" required>
               </div>
-			  <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+			        <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="email">email</label>
                 <div class="input-group mb-2">
 			        <div class="input-group-prepend">
@@ -80,12 +80,12 @@
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="idDepartamento">Departamento</label>
-                <select class="form-control" name="idDepartamento" id="idDepartamento" required>
+                <select class="form-control selectpicker" data-live-search="true" name="idDepartamento" id="idDepartamento" required>
                 </select>
               </div> 
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="idJefe">Jefe</label>
-                <select class="form-control" name="idJefe" id="idJefe" required>
+                <select class="form-control selectpicker" data-live-search="true" name="idJefe" id="idJefe" required>
                 </select>
               </div> 
               <div class="form-check col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -97,11 +97,11 @@
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="usr">Usuario</label>
-                <input class="form-control" type="text" name="usr" id="usr" maxlength="256" placeholder="Fecha Ingreso" required>
+                <input class="form-control" type="text" name="usr" id="usr" maxlength="256" placeholder="Usuario" required>
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="pwd">Contraseña</label>
-                <input class="form-control" type="password" name="pwd" id="pwd" maxlength="256" placeholder="Fecha Ingreso" required>
+                <input class="form-control" type="password" name="pwd" id="pwd" maxlength="256" placeholder="Contraseña" required>
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
               	<label>Foto de empleado</label>

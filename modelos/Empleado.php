@@ -80,7 +80,7 @@ Class Empleado{
 		FROM empleados e
 		INNER JOIN departamentos d
 		ON e.idDepartamento = d.idDepartamento
-		INNER JOIN empleados e2
+		LEFT OUTER JOIN empleados e2
 		ON e.idJefe = e2.idEmpleado" ;
     return ejecutarConsulta($sql);
   }

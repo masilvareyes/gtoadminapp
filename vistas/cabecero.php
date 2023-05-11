@@ -26,6 +26,7 @@ if (strlen(session_id())<1)
   <link rel="stylesheet" href="../public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <link rel="stylesheet" href="../public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../public/plugins/bootstrap-select/css/bootstrap-select.min.css">
   <link rel="stylesheet" href="../public/plugins/toastr/toastr.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
