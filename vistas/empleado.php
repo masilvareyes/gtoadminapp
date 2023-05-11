@@ -113,7 +113,7 @@
 
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <button class="btn btn-primary" id="btnGuardar" type="submit"><i class="fas fa-save"></i> Guardar</button>
-                <button class="btn btn-danger" id="btnCancelar" type="submit" onclick="cancelarform()"><i class="fas fa-arrow-circle-left"></i> Cancelar</button>  
+                <button class="btn btn-danger" id="btnCancelar" type="button" onclick="cancelarform()"><i class="fas fa-arrow-circle-left"></i> Cancelar</button>  
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <input class="form-control" type="hidden" name="fotoActual" id="fotoActual">
@@ -135,4 +135,4 @@
 <?php
   require 'piepagina.php'
 ?>
-<!--<script type="text/javascript" src="scripts/empleado.js"></script>-->
+<script type="text/javascript" src="scripts/empleado.js"></script>
