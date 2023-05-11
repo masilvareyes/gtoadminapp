@@ -8,6 +8,13 @@ function init(){
 		}
 	);
 
+    //llamado al ajax de departamento para traer los options del select de departamentos
+	$.post("../ajax/departamento.php?op=select",function(r){
+		console.log(r);
+		$("#idDepartamento").html(r);
+		$("#idDepartamento").selectpicker("refresh");
+	});
+
 }
 
 //limpiar formulario

@@ -75,6 +75,15 @@ switch ($_GET["op"]){
       $rspta=$departamento->activar($idDepartamento);
       echo $rspta?"Departamento activado":"Error departamento no activado";
     break;
+
+    // Caso para generar de manera dinámica las opciones del select con los elementos activos
+    // obtenidos desde la base.
+    case 'select':
+      $rspta =$departamento->select();
+      while ($reg = $rspta->fetch_object()){
+        echo "<option value='".$reg->idDepartamento."'>".$reg->descripcion."</option>";
+      }
+    break;
   /*
   
           echo "$reg->idDepartamento";
