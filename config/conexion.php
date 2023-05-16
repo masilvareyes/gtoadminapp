@@ -60,6 +60,14 @@ if (!function_exists('encryption')){ //Valida si la función ya esta en memoria.
     return $output;
   }
 
-
+  function write_log($log_msg){
+    $log_filename = "gastosLog";
+    if (!file_exists($log_filename)){
+        mkdir($log_filename, 0777, true);
+    }
+    $log_file_data = $log_filename.'/debug.log';
+    file_put_contents($log_file_data, "===================== ".date("Y-m-d H:i:s")." ==============" . "\n", FILE_APPEND);
+    file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
+  }
 }
 ?>

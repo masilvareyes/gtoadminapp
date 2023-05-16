@@ -59,7 +59,7 @@
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="segundoApellido">Segundo Apellido</label>
-                <input type="text" class="form-control" name="segundoApellido" id="segundoApellido" maxlength="256" placeholder="Segundo Apellido" required>
+                <input type="text" class="form-control" name="segundoApellido" id="segundoApellido" maxlength="256" placeholder="Segundo Apellido">
               </div>
 			        <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="email">email</label>
@@ -76,7 +76,7 @@
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="fechaBaja">Fecha de baja</label>
-                <input type="date" class="form-control" name="fechaBaja" id="fechaBaja" maxlength="256" placeholder="Fecha Ingreso" required>
+                <input type="date" class="form-control" name="fechaBaja" id="fechaBaja" maxlength="256" placeholder="Fecha Baja">
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="idDepartamento">Departamento</label>
@@ -85,13 +85,13 @@
               </div> 
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="idJefe">Jefe</label>
-                <select class="form-control selectpicker" data-live-search="true" name="idJefe" id="idJefe" required>
+                <select class="form-control selectpicker" data-live-search="true" name="idJefe" id="idJefe">
                 </select>
               </div> 
               <div class="form-check col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <label for="idJefe">Es Jefe</label>
                 <div class="custom-control custom-switch">
-                	<input class="custom-control-input" type="checkbox" name="esJefe" id="esJefe" required>
+                	<input class="custom-control-input" type="checkbox" name="esJefe" id="esJefe">
               		<label class="custom-control-label"  for="esJefe">Si</label>
                 </div>
               </div>

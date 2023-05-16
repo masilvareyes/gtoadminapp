@@ -3,12 +3,17 @@
 require_once "../modelos/Empleado.php";
 $empleado=new Empleado();
 
+
+write_log(json_encode($_POST));
+write_log(json_encode($_FILES));
+
+/*
 $idCategoria=isset($_POST['idCategoria'])?limpiarCadenas($_POST['idCategoria']):"";
 $descripcion=isset($_POST['descripcion'])?limpiarCadenas($_POST['descripcion']):"";
 
 $fechaActualizacion=date("Y-m-d H:i:s");
 $idEmpActualiza=1; // Cambiar por el usuario de la sesion.
-
+*/
 
 switch ($_GET["op"]){
 /*  case 'listar':
@@ -35,6 +40,7 @@ switch ($_GET["op"]){
 
   break;
   */
+  /*
   case 'guardaryeditar':
     if(empty($idCategoria)){  //Nuevos Registros
       $rspta=$categoria->insertar($descripcion);
@@ -45,6 +51,7 @@ switch ($_GET["op"]){
     }
     
     break;
+    */
 /*
   case 'mostrar':
     $rspta=$categoria->mostrar($idCategoria);
