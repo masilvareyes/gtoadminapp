@@ -3,19 +3,58 @@
 require_once "../modelos/Empleado.php";
 $empleado=new Empleado();
 
-
+write_log(json_encode($_GET));
 write_log(json_encode($_POST));
 write_log(json_encode($_FILES));
 
-/*
-$idCategoria=isset($_POST['idCategoria'])?limpiarCadenas($_POST['idCategoria']):"";
-$descripcion=isset($_POST['descripcion'])?limpiarCadenas($_POST['descripcion']):"";
+$idEmpleado=isset($_POST['idEmpleado'])?limpiarCadenas($_POST['idEmpleado']):"";
+$nombre=isset($_POST['nombre'])?limpiarCadenas($_POST['nombre']):"";
+$primerApellido=isset($_POST['primerApellido'])?limpiarCadenas($_POST['primerApellido']):"";
+$segundoApellido=isset($_POST['segundoApellido'])?limpiarCadenas($_POST['segundoApellido']):"";
+
+$email=isset($_POST['email'])?limpiarCadenas($_POST['email']):"";
+$fechaEntrada=isset($_POST['fechaEntrada'])?limpiarCadenas($_POST['fechaEntrada']):"";
+$fechaBaja=isset($_POST['fechaBaja'])?limpiarCadenas($_POST['fechaBaja']):"";
+
+$idDepartamento=isset($_POST['idDepartamento'])?limpiarCadenas($_POST['idDepartamento']):"";
+$idJefe=isset($_POST['idJefe'])?limpiarCadenas($_POST['idJefe']):"";
+$fechaBaja=isset($_POST['fechaBaja'])?limpiarCadenas($_POST['fechaBaja']):"";
+$esJefe=isset($_POST['esJefe'])?limpiarCadenas($_POST['esJefe']):"";
+
+$usr=isset($_POST['usr'])?limpiarCadenas($_POST['usr']):"";
+$pwd=isset($_POST['pwd'])?limpiarCadenas($_POST['pwd']):"";
+
+$fotoActual=isset($_POST['fotoActual'])?limpiarCadenas($_POST['fotoActual']):"";
 
 $fechaActualizacion=date("Y-m-d H:i:s");
 $idEmpActualiza=1; // Cambiar por el usuario de la sesion.
-*/
+$imagen="";
 
 switch ($_GET["op"]){
+    case 'guardaryeditar':
+
+        //Logica para identificar que imagen voy a grabar / mantener
+        if(!file_exists($_FILES['foto']['tmp_name'])||!is_uploaded_file($_FILES['foto']['tmp_name'])){
+            $imagen=$fotoActual;
+        }else{
+            $ext=explode(".", $_FILES['foto']['name']);
+            if($_FILES['foto']['type']=="image/jpg"||$_FILES['foto']['type']=="image/jpeg"||$_FILES['foto']['type']=="image/png"){
+                $imagen=round(microtime(true)).'.'.end($ext);
+                move_uploaded_file($_FILES['foto']['tmp_name'], '../files/img/'.$imagen);
+            }
+        }
+  
+        
+    
+      if(empty($idEmpleado)){  //Nuevos Registros
+        
+      }else{  //Registros ya existentes
+        //$rspta=$categoria->editar($idCategoria, $descripcion, $fechaActualizacion, $idEmpActualiza);
+        //echo $rspta!=0?"Categoria actualizada":"Error categoria no actualizada";
+      }
+     break;
+
+
 /*  case 'listar':
     $rspta=$categoria->listar();
     $data=Array();
@@ -40,18 +79,7 @@ switch ($_GET["op"]){
 
   break;
   */
-  /*
-  case 'guardaryeditar':
-    if(empty($idCategoria)){  //Nuevos Registros
-      $rspta=$categoria->insertar($descripcion);
-      echo $rspta!=0?"Categoria registrada":"Error categoria no resgistrada";
-    }else{  //Registros ya existentes
-      $rspta=$categoria->editar($idCategoria, $descripcion, $fechaActualizacion, $idEmpActualiza);
-      echo $rspta!=0?"Categoria actualizada":"Error categoria no actualizada";
-    }
-    
-    break;
-    */
+ 
 /*
   case 'mostrar':
     $rspta=$categoria->mostrar($idCategoria);

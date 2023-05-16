@@ -2,3 +2,15 @@
 {"idEmpleado":"","nombre":"Nombre","primerApellido":"Apellido1","segundoApellido":"Apellido2","email":"mail@test.com","fechaEntrada":"2023-05-01","fechaBaja":"2023-09-20","idDepartamento":"3","esJefe":"on","usr":"test","pwd":"contra","fotoActual":""}
 ===================== 2023-05-16 00:13:30 ==============
 {"foto":{"name":"Foto (2).jpg","type":"image\/jpeg","tmp_name":"C:\\xampp\\tmp\\phpA89C.tmp","error":0,"size":13044}}
+===================== 2023-05-16 00:41:30 ==============
+{"op":"guardaryeditar"}
+===================== 2023-05-16 00:41:30 ==============
+{"idEmpleado":"","nombre":"nombre","primerApellido":"Apellido1","segundoApellido":"Apellido2","email":"mail@test.com","fechaEntrada":"2023-05-01","fechaBaja":"2023-08-31","idDepartamento":"3","esJefe":"on","usr":"test","pwd":"NotelaSabes","fotoActual":""}
+===================== 2023-05-16 00:41:30 ==============
+{"foto":{"name":"Foto (2).jpg","type":"image\/jpeg","tmp_name":"C:\\xampp\\tmp\\php4A62.tmp","error":0,"size":13044}}
+===================== 2023-05-16 00:42:43 ==============
+{"op":"guardaryeditar"}
+===================== 2023-05-16 00:42:43 ==============
+{"idEmpleado":"","nombre":"empleado2","primerApellido":"apellido1","segundoApellido":"apellido2","email":"test@mail.com","fechaEntrada":"2023-05-01","fechaBaja":"2023-10-19","idDepartamento":"5","esJefe":"on","usr":"test2","pwd":"NotelaSabes","fotoActual":""}
+===================== 2023-05-16 00:42:43 ==============
+{"foto":{"name":"Foto (3).jpg","type":"image\/jpeg","tmp_name":"C:\\xampp\\tmp\\php676C.tmp","error":0,"size":38295}}
