@@ -44,7 +44,7 @@ switch ($_GET["op"]){
             }
         }
   
-        
+        if(strlen($imagen)<1){$imagen='default.png';}      
     
       if(empty($idEmpleado)){  //Nuevos Registros
         
