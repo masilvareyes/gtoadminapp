@@ -1,0 +1,4 @@
+===================== 2023-05-16 00:13:30 ==============
+{"idEmpleado":"","nombre":"Nombre","primerApellido":"Apellido1","segundoApellido":"Apellido2","email":"mail@test.com","fechaEntrada":"2023-05-01","fechaBaja":"2023-09-20","idDepartamento":"3","esJefe":"on","usr":"test","pwd":"contra","fotoActual":""}
+===================== 2023-05-16 00:13:30 ==============
+{"foto":{"name":"Foto (2).jpg","type":"image\/jpeg","tmp_name":"C:\\xampp\\tmp\\phpA89C.tmp","error":0,"size":13044}}

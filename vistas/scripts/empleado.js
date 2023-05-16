@@ -59,4 +59,32 @@ function cancelarform() {
 	mostrarform(false);
 }
 
+
+function guardaryeditar(e) {
+	e.preventDefault();
+
+	$("#btnagregar").prop("disable",true);
+	var formData = new FormData($("#formulario")[0]);
+	$.ajax({
+		url:"../ajax/empleado.php?op=guardaryeditar",
+		type: "POST",
+		data: formData,
+		contentType: false, //no manda cabecero
+		processData: false, //no convierte objetos en string
+
+		success: function (mensaje) {
+			valida = mensaje.indexOf('rror');
+			
+			if(valida!=-1){
+				toastr["error"](mensaje);
+			}else{
+				toastr["success"](mensaje);
+			}
+			mostrarform(false);
+			//table.ajax.reload();
+		}
+	});
+	limpiar();
+}
+
 init();
