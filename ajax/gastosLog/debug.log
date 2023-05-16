@@ -14,3 +14,9 @@
 {"idEmpleado":"","nombre":"empleado2","primerApellido":"apellido1","segundoApellido":"apellido2","email":"test@mail.com","fechaEntrada":"2023-05-01","fechaBaja":"2023-10-19","idDepartamento":"5","esJefe":"on","usr":"test2","pwd":"NotelaSabes","fotoActual":""}
 ===================== 2023-05-16 00:42:43 ==============
 {"foto":{"name":"Foto (3).jpg","type":"image\/jpeg","tmp_name":"C:\\xampp\\tmp\\php676C.tmp","error":0,"size":38295}}
+===================== 2023-05-16 01:13:56 ==============
+{"op":"guardaryeditar"}
+===================== 2023-05-16 01:13:56 ==============
+{"idEmpleado":"","nombre":"Marco ","primerApellido":"Silva","segundoApellido":"Reyes","email":"mail@test.com","fechaEntrada":"2023-05-01","fechaBaja":"","idDepartamento":"3","esJefe":"on","usr":"test","pwd":"Contra","fotoActual":""}
+===================== 2023-05-16 01:13:56 ==============
+{"foto":{"name":"Foto (6).jpg","type":"image\/jpeg","tmp_name":"C:\\xampp\\tmp\\phpFD3C.tmp","error":0,"size":15187}}

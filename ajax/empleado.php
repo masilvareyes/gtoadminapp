@@ -47,7 +47,12 @@ switch ($_GET["op"]){
         if(strlen($imagen)<1){$imagen='default.png';}      
     
       if(empty($idEmpleado)){  //Nuevos Registros
-        
+        $nombre=encryption($nombre);
+    	$primerApellido=encryption($primerApellido);
+    	$segundoApellido=encryption($segundoApellido);
+        $rspta=$empleado->insertar($nombre, $primerApellido, $segundoApellido, $email, $fechaEntrada, $fechaBaja, $idDepartamento, $idJefe, (strlen($esJefe)<1)?0:1, $usr, $pwd, $imagen, $idEmpActualiza);
+
+        echo $rspta!=0?"Empleado registrado":"Error empleado no resgistrado";
       }else{  //Registros ya existentes
         //$rspta=$categoria->editar($idCategoria, $descripcion, $fechaActualizacion, $idEmpActualiza);
         //echo $rspta!=0?"Categoria actualizada":"Error categoria no actualizada";
