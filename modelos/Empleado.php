@@ -76,12 +76,16 @@ Class Empleado{
 		e.activo, 
 		e.fechaCreacion, 
 		e.fechaActualizacion, 
-		e.idEmpActualiza
+		e.idEmpActualiza,
+		e3.nombre as nombreAct, 
+		e3.primerApellido as primerApellidoAct
 		FROM empleados e
 		INNER JOIN departamentos d
 		ON e.idDepartamento = d.idDepartamento
 		LEFT OUTER JOIN empleados e2
-		ON e.idJefe = e2.idEmpleado" ;
+		ON e.idJefe = e2.idEmpleado
+		LEFT OUTER JOIN empleados e3
+		ON e.idEmpActualiza = e3.idEmpleado" ;
     return ejecutarConsulta($sql);
   }
 
