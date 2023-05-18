@@ -21,5 +21,6 @@ define("METHOD", "AES-256-CBC");
 //llave del metodo de encriptado
 define("SECRET_KEY", "#SDAWi2022ii@gastos");
 
-
+//Constante para encriptado HASH
+define("PEPPER", "#SDAWi2022ii@Pepper");
 ?>

@@ -69,5 +69,23 @@ if (!function_exists('encryption')){ //Valida si la función ya esta en memoria.
     file_put_contents($log_file_data, "===================== ".date("Y-m-d H:i:s")." ==============" . "\n", FILE_APPEND);
     file_put_contents($log_file_data, $log_msg . "\n", FILE_APPEND);
   }
+  
+  function set_pass($contra){
+    $pwd_peppered = hash_hmac("sha256", $contra, PEPPER);
+    $opciones = [
+        'cost' => 11
+    ];
+    $pwd_hashed = password_hash($pwd_peppered, PASSWORD_BCRYPT, $opciones);
+    return $pwd_hashed;
+  }
+
+  function val_pass($contra,$dbContra){
+
+      $pwd_peppered = hash_hmac("sha256", $contra, PEPPER);
+
+      $verification = password_verify($pwd_peppered, $dbContra);
+
+      return $verification;
+  }
 }
 ?>

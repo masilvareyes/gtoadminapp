@@ -50,6 +50,7 @@ switch ($_GET["op"]){
         $nombre=encryption($nombre);
     	$primerApellido=encryption($primerApellido);
     	$segundoApellido=encryption($segundoApellido);
+      $pwd=set_pass($pwd);
         $rspta=$empleado->insertar($nombre, $primerApellido, $segundoApellido, $email, $fechaEntrada, $fechaBaja, $idDepartamento, $idJefe, (strlen($esJefe)<1)?0:1, $usr, $pwd, $imagen, $idEmpActualiza);
 
         echo $rspta!=0?"Empleado registrado":"Error empleado no resgistrado";
