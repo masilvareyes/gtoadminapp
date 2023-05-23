@@ -71,7 +71,7 @@
 	            </div>
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <label for="fechaEntrada">Fecha de Ingresgo</label>
+                <label for="fechaEntrada">Fecha de Ingreso</label>
                 <input type="date" class="form-control" name="fechaEntrada" id="fechaEntrada" maxlength="256" placeholder="Fecha Ingreso" required>
               </div>
               <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">

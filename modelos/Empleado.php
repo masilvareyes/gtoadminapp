@@ -21,14 +21,14 @@ Class Empleado{
       return ejecutarConsulta($sql);
   }
 
-  public function desactivar($idEmpleado){
-    $sql= "UPDATE empleados SET activo = '0'
+  public function desactivar($idEmpleado, $fechaActualizacion, $idEmpActualiza){
+    $sql= "UPDATE empleados SET activo = '0', fechaBaja='$fechaActualizacion', fechaActualizacion='$fechaActualizacion', idEmpActualiza='$idEmpActualiza'
     WHERE idEmpleado='$idEmpleado' " ;
     return ejecutarConsulta($sql);
   }
 
-  public function activar($idEmpleado){
-    $sql= "UPDATE empleados SET activo = '1'
+  public function activar($idEmpleado, $fechaActualizacion, $idEmpActualiza){
+    $sql= "UPDATE empleados SET activo = '1',fechaEntrada='$fechaActualizacion', fechaBaja='', fechaActualizacion='$fechaActualizacion', idEmpActualiza='$idEmpActualiza'
     WHERE idEmpleado='$idEmpleado' " ;
     return ejecutarConsulta($sql);
   }
@@ -88,7 +88,8 @@ Class Empleado{
 		LEFT OUTER JOIN empleados e2
 		ON e.idJefe = e2.idEmpleado
 		LEFT OUTER JOIN empleados e3
-		ON e.idEmpActualiza = e3.idEmpleado" ;
+		ON e.idEmpActualiza = e3.idEmpleado
+		WHERE e.idEmpleado <>1" ;
     return ejecutarConsulta($sql);
   }
 
