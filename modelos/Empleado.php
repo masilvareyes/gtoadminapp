@@ -13,8 +13,11 @@ Class Empleado{
   }
 
   public function editar($idEmpleado, $nombre, $primerApellido, $segundoApellido, $email, $fechaEntrada, $fechaBaja, $idDepartamento, $idJefe, $esJefe, $usr, $pwd, $foto, $fechaActualizacion, $idEmpActualiza){
-    $sql="UPDATE empleados SET nombre='$nombre', primerApellido='$primerApellido', segundoApellido='$segundoApellido', email='$email', fechaEntrada='$fechaEntrada', fechaBaja='$fechaBaja', idDepartamento='$idDepartamento', idJefe='$idJefe', esJefe='$esJefe', usr='$usr', pwd='$pwd', foto='$foto', fechaActualizacion='$fechaActualizacion', idEmpActualiza='$idEmpActualiza'
+	$password=($pwd=="")?"":"pwd='$pwd',";
+
+    $sql="UPDATE empleados SET nombre='$nombre', primerApellido='$primerApellido', segundoApellido='$segundoApellido', email='$email', fechaEntrada='$fechaEntrada', fechaBaja='$fechaBaja', idDepartamento='$idDepartamento', idJefe='$idJefe', esJefe='$esJefe', usr='$usr',".$password." foto='$foto', fechaActualizacion='$fechaActualizacion', idEmpActualiza='$idEmpActualiza'
       WHERE idEmpleado='$idEmpleado' ";
+      write_log("Modelo empleado - editar query =".$sql);
       return ejecutarConsulta($sql);
   }
 

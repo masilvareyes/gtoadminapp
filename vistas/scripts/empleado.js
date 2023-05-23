@@ -87,7 +87,7 @@ function guardaryeditar(e) {
 				toastr["success"](mensaje);
 			}
 			mostrarform(false);
-			//table.ajax.reload();
+			table.ajax.reload();
 		}
 	});
 	limpiar();

@@ -55,8 +55,22 @@ switch ($_GET["op"]){
 
         echo $rspta!=0?"Empleado registrado":"Error empleado no resgistrado";
       }else{  //Registros ya existentes
-        //$rspta=$categoria->editar($idCategoria, $descripcion, $fechaActualizacion, $idEmpActualiza);
-        //echo $rspta!=0?"Categoria actualizada":"Error categoria no actualizada";
+        $hashValidador=hash("SHA256","Contraseña no actualizada");
+        //write_log("Ajax empleado - editar valor de hashValidador: $hashValidador || pwd = $pwd");
+  
+        if($pwd == $hashValidador){
+          $pwd="";
+          write_log("Ajax empleado - editar iguales valor de hashValidador: $hashValidador || pwd = $pwd");
+        }else{
+          $pwd=set_pass($pwd);
+          write_log("Ajax empleado - editar diferentes valor de hashValidador: $hashValidador || pwd = $pwd");
+        }
+        $nombre=encryption($nombre);
+        $primerApellido=encryption($primerApellido);
+        $segundoApellido=encryption($segundoApellido);
+  
+        $rspta=$empleado->editar($idEmpleado, $nombre, $primerApellido, $segundoApellido, $email, $fechaEntrada, $fechaBaja, $idDepartamento, $idJefe, (strlen($esJefe)<1)?0:1, $usr, $pwd, $imagen, $fechaActualizacion, $idEmpActualiza);
+        echo $rspta!=0?"Empleado actualizado":"Error empleado no actualizado";
       }
      break;
 
