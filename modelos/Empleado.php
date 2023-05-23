@@ -48,7 +48,7 @@ Class Empleado{
 		e.activo, 
 		e.fechaCreacion, 
 		e.fechaActualizacion, 
-		e.idEmpActualiza,
+		e.idEmpActualiza
 		FROM empleados e
 		WHERE  idEmpleado='$idEmpleado'" ;
 

@@ -98,11 +98,29 @@ switch ($_GET["op"]){
       }
       
     break; 
-/*
-  case 'mostrar':
-    $rspta=$categoria->mostrar($idCategoria);
-    echo json_encode($rspta);
-    break;
+	  case 'mostrar':
+	    $rspta=$empleado->mostrar($idEmpleado);
+
+      //write_log(" Ajax Empleado Caso Mostrar");
+      //write_log(json_encode($rspta));
+
+      $rspta["nombre"]=decryption($rspta["nombre"]);
+      $rspta["primerApellido"]=decryption($rspta["primerApellido"]);
+      $rspta["segundoApellido"]=decryption($rspta["segundoApellido"]);
+
+      if(strlen(strtotime($rspta["fechaEntrada"]))>1){
+        $rspta["fechaEntrada"]=date("Y-m-d",strtotime($rspta["fechaEntrada"]));
+      }
+      if(strlen(strtotime($rspta["fechaBaja"]))>1){
+        $rspta["fechaBaja"]=date("Y-m-d",strtotime($rspta["fechaBaja"]));
+      }
+
+    $rspta["pwd"]=hash("SHA256","Contraseña no actualizada");     
+
+
+	  echo json_encode($rspta);
+	  break;
+    /*
 
   case 'desactivar':
   $rspta=$categoria->desactivar($idCategoria);

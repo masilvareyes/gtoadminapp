@@ -123,4 +123,32 @@ function listar(){
 		"order": [[1,"desc"]]
 	}).DataTable();
 }
+
+
+function mostrar(idEmpleado) {
+	$.post("../ajax/empleado.php?op=mostrar",{idEmpleado:idEmpleado},function(data){
+		console.log(data);
+		data=JSON.parse(data);
+		mostrarform(true); 
+		$("#idEmpleado").val(data.idEmpleado);
+		$("#nombre").val(data.nombre);
+		$("#primerApellido").val(data.primerApellido);
+		$("#segundoApellido").val(data.segundoApellido);
+		$("#email").val(data.email);
+		$("#fechaEntrada").val(data.fechaEntrada);
+		$("#fechaBaja").val(data.fechaBaja);
+		$("#idDepartamento").val(data.idDepartamento);
+		$("#idDepartamento").selectpicker("refresh");
+		$("#idJefe").val(data.idJefe);
+		$("#idJefe").selectpicker("refresh");
+		data.esJefe==1?$("#esJefe").prop("checked", true):$("#esJefe").prop("checked", false);
+
+		$("#usr").val(data.usr);
+		$("#pwd").val(data.pwd);
+
+		$("#fotoActual").val(data.foto);
+		$("#imagenmuestra").attr("src","../files/img/"+data.foto);
+
+	});
+}
 init();
