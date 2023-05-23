@@ -113,6 +113,31 @@ Class Empleado{
     	AND activo='1'" ;
     return ejecutarConsulta($sql);
   }
+
+  public function selectJefe(){
+    $sql= "SELECT
+		e.idEmpleado, 
+		e.nombre, 
+		e.primerApellido, 
+		e.segundoApellido, 
+		e.email, 
+		e.fechaEntrada, 
+		e.fechaBaja, 
+		e.idDepartamento, 
+		e.idJefe, 
+		e.esJefe, 
+		e.usr, 
+		e.pwd, 
+		e.foto, 
+		e.activo, 
+		e.fechaCreacion, 
+		e.fechaActualizacion, 
+		e.idEmpActualiza
+		FROM empleados e
+		WHERE  activo='1'
+		AND esJefe = '1'" ;
+    return ejecutarConsulta($sql);
+  }
 }
 
 ?>

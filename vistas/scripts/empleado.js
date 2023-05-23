@@ -15,6 +15,12 @@ function init(){
 		$("#idDepartamento").selectpicker("refresh");
 	});
 
+	$.post("../ajax/empleado.php?op=selectJefe",function(r){
+		console.log(r);
+		$("#idJefe").html(r);
+		$("#idJefe").selectpicker("refresh");
+	});
+
 }
 
 //limpiar formulario
